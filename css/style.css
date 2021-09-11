@@ -29,7 +29,7 @@
   border: 1px solid blue;
   width: 250px;
   height: 700px;
-  background-color: pink;
+  background-color: #eee;
   display: flex;
   justify-content: center;
   align-items: none;
@@ -54,18 +54,24 @@
   border: 1px solid blue;
   width: 650px;
   height: 700px;
-  background-color: pink;
+  background-color: #eee;
+  position: relative;
 }
 
 .wrap .main .mainImg img {
   height: 90%;
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .wrap .main .selectBox {
   border: 1px solid blue;
   width: 450px;
   height: 700px;
-  background-color: pink;
+  background-color: #eee;
   padding: 40px;
 }
 
@@ -77,16 +83,21 @@
 
 .wrap .main .selectBox td {
   width: 300px;
-  height: 50px;
+  height: 100px;
   border: 1px solid blue;
 }
 
-.wrap .main .selectBox .cBox {
+.wrap .main .selectBox .input_box {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: space-around;
   flex-wrap: wrap;
   flex-direction: row;
+}
+
+.wrap .main .selectBox .input_box .check {
+  width: 30%;
+  height: 30px;
 }
 
 .wrap .main .selectBox .colorBox {

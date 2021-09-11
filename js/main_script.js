@@ -26,7 +26,7 @@
 // }
 // colorBox();
 $(function(){
-    
+    //왼쪽 이미지 출력
     function imgBox(){
     const img = document.getElementsByTagName("li");
     let i= 0;
@@ -37,18 +37,37 @@ $(function(){
     }
     imgBox();
 
+    //
+    ;
+
     function colorBox(){
-        const color = document.getElementById("cBox");
-        const colorName =["gray","pink","black","white"];
-        let i = 0;
-        while(i<colorName.length){
-            color.innerHTML += "<input type='checkbox' id="+i+">"+colorName[i];
-            $("#"+i+"").click(function(){
-                alert(1);
-                $("mainImg img").attr("src",`./image/main/color/${i}.png`);
+        const color = document.getElementById("input_box");
+        const colorImg = document.getElementById("mainImg");
+        const colorName =["Rosegold","Mint","Purple","Red","Skyblue"];
+
+        // $.each(colorName, function(i, el){
+        //     console.log(i)
+        //     console.log(el)
+        // });
+
+        $.each(colorName, function(i, el){
+            colorImg.innerHTML += '<img src="./image/main/color/'+i+'.png">';
+            $("#mainImg img").eq(0).show();
+            // color.innerHTML += '<input type="checkbox" name="color" id="'+i+'">'+ el
+            // +colorName[i];
+            $("#color"+i).click(function(){
+                // alert(1);
+                
+                $("#mainImg img").hide();
+                $("#mainImg img").eq(i).show();
+                
+                // if ($().val() = true){
+                //     alert(1);
+                //     $(this).not().attr("checked", false);
+                // }
             });
-            i++;
-        }
+            
+        })
     }
     colorBox();
 
