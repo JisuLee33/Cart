@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+.wrap {
+  width: 100%;
+  background-color: skyblue;
+}
+
+.wrap .main {
+  width: 1500px;
+  height: 900px;
+  border: 1px solid blue;
+  background-color: #eee;
+  border: 1px solid blue;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.wrap .main .imgList {
+  border: 1px solid blue;
+  width: 250px;
+  height: 700px;
+  background-color: pink;
+  display: flex;
+  justify-content: center;
+  align-items: none;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: space-around;
+}
+
+.wrap .main .imgList li {
+  width: 200px;
+  height: 200px;
+  background-color: white;
+}
+
+.wrap .main .imgList li img {
+  height: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.wrap .main .mainImg {
+  border: 1px solid blue;
+  width: 650px;
+  height: 700px;
+  background-color: pink;
+}
+
+.wrap .main .mainImg img {
+  height: 90%;
+}
+
+.wrap .main .selectBox {
+  border: 1px solid blue;
+  width: 450px;
+  height: 700px;
+  background-color: pink;
+  padding: 40px;
+}
+
+.wrap .main .selectBox th {
+  width: 80px;
+  height: 50px;
+  border: 1px solid blue;
+}
+
+.wrap .main .selectBox td {
+  width: 300px;
+  height: 50px;
+  border: 1px solid blue;
+}
+
+.wrap .main .selectBox .cBox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.wrap .main .selectBox .colorBox {
+  width: 30px;
+  height: 30px;
+  background-color: #eee;
+}
+
+.wrap .main .selectBox .colorBox .colorBox1 {
+  color: pink;
+}
+
+.wrap .main .selectBox .colorBox .colorBox2 {
+  color: pink;
+}
+
+.wrap .main .selectBox .colorBox .colorBox3 {
+  color: pink;
+}
+
+.wrap .main .selectBox .colorBox .colorBox4 {
+  color: pink;
+}

@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+$bigBox: #eee;
+$sBox: pink;
+$testBorder : 1px solid blue;
+$marginCenter : 0 auto;
+$height: 90px;
+
+@mixin flex($x, $y, $w, $d){
+    display :flex;
+    justify-content :$x;
+    align-items :$y;
+    flex-wrap :$w;
+    flex-direction :$d; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+.wrap {
+    width: 100%;
+    @if not ($height > 100px) {
+        background-color:skyblue;
+    } 
+
+
+    .main {
+        width: 1500px;
+        height: 900px;
+        border: $testBorder;
+        background-color: $bigBox;
+        border: $testBorder;
+        margin: $marginCenter;
+        @include flex(space-around, center, nowrap, row); 
+        
+
+        .imgList {
+            border: $testBorder;
+            width: 250px;
+            height: 700px;
+            background-color: $sBox;
+            @include flex(center, none, wrap, row); 
+            align-content: space-around;
+            li {
+                width: 200px;
+                height: 200px;
+                background-color: white;
+                img {
+                    height : 100%;
+                    margin: 0 auto;
+                    display: block;
+            
+                }    
+            }
+            
+        }
+        .mainImg {
+            border: $testBorder;
+            width: 650px;
+            height: 700px;
+            background-color: $sBox;
+            img {
+                height: 90%;
+            }
+        }
+        .selectBox {
+            border: $testBorder;
+            width: 450px;
+            height: 700px;
+            background-color: $sBox;
+            padding: 40px;
+            
+
+
+            th {
+                width:80px;
+                height:50px;
+                border: $testBorder;
+                // border-right: 5px solid #eee;
+                // margin-right: 30px;
+            }
+        
+            td {
+                width:300px;
+                height:50px;
+                border : $testBorder;
+            }
+
+            .cBox {
+                @include flex(space-around, center, wrap, row); 
+            }    
+        
+            .colorBox {
+                width:30px;
+                height:30px;
+                background-color:#eee;
+             
+                @for $i from 1 to 5 {
+                    .colorBox#{$i} {color:pink}
+                }
+            }
+        }
+
+
+
+    }
+
+}
