@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Document</title>
+    <style>
+        .result {
+            width: 300px;
+            height: 500px;
+            background-color: skyblue;
+        }
+    </style>
 </head>
 <body>
     <select name="choice" id="choice">
@@ -15,36 +22,60 @@
         <option value="red">red</option>
         <option value="skyblue">skyblue</option>
     </select>
+    <input type="number" id="number" min="1" max="10" placeholder="1">
+
+    <button id="order">장바구니 추가</button>
+
+    <div id="result" class="result"></div>
     <script>
-        // const val = document.getElementById("choice");
+    $(function(){
+        // const va = document.getElementById("choice");
         // const arr = [];
         // console.log(val[val.selectedIndex]);
 
-        const arr = [
-            {value : 'rosegold'},
-            {value : 'mint'},
-            {value : 'purple'}
-        ]
+        // const arr = [
+        //     {value : 'rosegold'},
+        // ];
+        $("#order").click(function(){
+            const op = $("#choice option:selected");
+            const number = $("#number");
+            let result ="선택하신 옵션은"+ op.val() + "수량은" + number.val()+"개";
+                // $("#result").html(123);
+            // result += op + '';
+            $("#result").html(result);
+            // return re.result;
+            
+        });
 
-        arr.forEach(function (el, index){
-            console.log(el);
-        })
-        // class Val {
-        //     constructor(c, o){
-        //         c = this.c;
+        
+
+        // arr.forEach(function (el, index){
+        //     console.log(el);
+        // });
+        // const color = [rosegold, mint, purple, red, skyblue];
+        // $(va).each(arr, function(idx, el){
+        //     alert(1);
+        //     va.innerHTML += '<option value="'+arr.el+'">'+el+'</option>'
+        // });
+        // console.log(ar1);
+        // class Arr {
+        //     constructor(va, o){
+        //         va = this.va;
         //         o = this.o;
         //     }
-        //     i=0;
-        //     arr.forEach(){
-
-        //     }
-
+        
+            
+            
         //     sel(){
-        //         return 
-        //     }
+        //          color.forEach(function(el, index){
+        //             const abc = document.getElementById("result");
+        //             abc.innerHTML= abc.index.value;
+        //          })
+        //      }   
         // }
         // const val = new Val();
         // val.sel(); 
+    });
     </script>
 </body>
 </html>
