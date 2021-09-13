@@ -15,7 +15,7 @@
   width: 1500px;
   height: 900px;
   border: 1px solid blue;
-  background-color: #eee;
+  background-color: pink;
   border: 1px solid blue;
   margin: 0 auto;
   display: flex;
@@ -29,7 +29,7 @@
   border: 1px solid blue;
   width: 250px;
   height: 700px;
-  background-color: #eee;
+  background-color: ivory;
   display: flex;
   justify-content: center;
   align-items: none;
@@ -54,14 +54,13 @@
   border: 1px solid blue;
   width: 650px;
   height: 700px;
-  background-color: #eee;
+  background-color: ivory;
   position: relative;
 }
 
 .wrap .main .mainImg img {
   height: 90%;
   position: absolute;
-  display: none;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -71,33 +70,62 @@
   border: 1px solid blue;
   width: 450px;
   height: 700px;
-  background-color: #eee;
+  background-color: ivory;
   padding: 40px;
 }
 
-.wrap .main .selectBox th {
+.wrap .main .selectBox table {
+  margin: 30px 0;
+}
+
+.wrap .main .selectBox table th {
   width: 80px;
   height: 50px;
   border: 1px solid blue;
 }
 
-.wrap .main .selectBox td {
+.wrap .main .selectBox table td {
   width: 300px;
   height: 100px;
+  text-align: center;
   border: 1px solid blue;
 }
 
-.wrap .main .selectBox .input_box {
-  display: flex;
-  justify-content: space-around;
-  align-items: space-around;
-  flex-wrap: wrap;
-  flex-direction: row;
+.wrap .main .selectBox .order {
+  width: 150px;
+  height: 50px;
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 17px;
+  border-radius: 5px;
 }
 
-.wrap .main .selectBox .input_box .check {
-  width: 30%;
+.wrap .main .selectBox .result {
+  width: 300px;
+  height: auto;
+  position: absolute;
+  top: 0;
+  display: none;
+  background-color: mediumspringgreen;
+  padding: 30px;
+}
+
+.wrap .main .selectBox .result h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.wrap .main .selectBox .result .insert {
+  height: auto;
+}
+
+.wrap .main .selectBox .result .exit {
+  width: 50px;
   height: 30px;
+  border: none;
+  margin: 20px auto;
+  display: block;
 }
 
 .wrap .main .selectBox .colorBox {

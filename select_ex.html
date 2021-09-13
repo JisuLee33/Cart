@@ -15,18 +15,7 @@
     </style>
 </head>
 <body>
-    <select name="choice" id="choice">
-        <option value="rosegold" >rosegold</option>
-        <option value="mint">mint</option>
-        <option value="purple">purple</option>
-        <option value="red">red</option>
-        <option value="skyblue">skyblue</option>
-    </select>
-    <input type="number" id="number" min="1" max="10" placeholder="1">
-
-    <button id="order">장바구니 추가</button>
-
-    <div id="result" class="result"></div>
+   
     <script>
     $(function(){
         // const va = document.getElementById("choice");
@@ -37,14 +26,11 @@
         //     {value : 'rosegold'},
         // ];
         $("#order").click(function(){
-            const op = $("#choice option:selected");
+            const op = $("#choice option:selected");// 속성값을 attr로 추가 삭제?!
             const number = $("#number");
-            let result ="선택하신 옵션은"+ op.val() + "수량은" + number.val()+"개";
-                // $("#result").html(123);
-            // result += op + '';
-            $("#result").html(result);
-            // return re.result;
-            
+            let result ="옵션 : "+ op.val() + " 수량 : " + number.val()+"개";
+            const print = (op.val()!="" && number.val()!="") ? $("#result").html(result) : alert("옵션과 갯수를 확인해 주세요");
+            return print;
         });
 
         

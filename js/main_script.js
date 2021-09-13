@@ -1,30 +1,3 @@
-// function head(){
-//     const header = document.getElementById("main");
-//     header.innerHTML += "<nav>navigation</nav>";
-//     nav.innerHTML += "<div>logo</div>";
-// }
-// head();
-
-
-// function head(){
-//     const header = document.getElementById("main");
-//     // header.innerHTML += "<nav>navigation</nav>";
-//     // nav.innerHTML += "<div>logo</div>";
-// }
-// head();
-
-
-
-// function colorBox(){
-//     const color = document.getElementById("cBox");
-//     const colorName = new Array("gray","pink","black","white");
-//     let i = 0;
-//     while(i<4){
-//     color.innerHTML += "<input type='checkbox'>"+colorName[i]+"<div class='+colorBox"+i+"'></div>"
-//     i++;
-//     }
-// }
-// colorBox();
 $(function(){
     //왼쪽 이미지 출력
     function imgBox(){
@@ -37,40 +10,26 @@ $(function(){
     }
     imgBox();
 
-    //
-    ;
+    //옵션 선택에 따른 사진 변경
+    $("#choice").change(function(){
+        let OpVal = $('option:selected', this).text();
+        let img_src = "./image/main/color/"+OpVal+".png";
+    $("#mainImg img").attr("src", img_src);    
+    });
 
-    function colorBox(){
-        const color = document.getElementById("input_box");
-        const colorImg = document.getElementById("mainImg");
-        const colorName =["Rosegold","Mint","Purple","Red","Skyblue"];
+    //옵션 + 수량 선택 후 카트에 담기 
+    $("#order").click(function(){
+    const op = $("#choice option:selected");
+    const number = $("#number");
+    const insert = document.getElementById("insert")
+    let result ="옵션 : "+ op.val() + " 수량 : " + number.val()+"개";
+    const print = (op.val()!="" && number.val()!="") ? ($("#result").show() , insert.innerHTML=result) : alert("옵션과 갯수를 확인해 주세요");
+    return print;
+    });
 
-        // $.each(colorName, function(i, el){
-        //     console.log(i)
-        //     console.log(el)
-        // });
-
-        $.each(colorName, function(i, el){
-            colorImg.innerHTML += '<img src="./image/main/color/'+i+'.png">';
-            $("#mainImg img").eq(0).show();
-            // color.innerHTML += '<input type="checkbox" name="color" id="'+i+'">'+ el
-            // +colorName[i];
-            $("#color"+i).click(function(){
-                // alert(1);
-                
-                $("#mainImg img").hide();
-                $("#mainImg img").eq(i).show();
-                
-                // if ($().val() = true){
-                //     alert(1);
-                //     $(this).not().attr("checked", false);
-                // }
-            });
-            
-        })
-    }
-    colorBox();
+    //카트 닫기 
+    $("#exit").click(function(){
+        $("#result").hide();
+    });
 
 });
-
-// function colorBox()

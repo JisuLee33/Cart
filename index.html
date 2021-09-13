@@ -14,17 +14,19 @@
     <div id="wrap" class="wrap">
     
         <main id="main" class="main">
+            <!-- main의 왼쪽 -->
             <ul id="imgList" class="imgList cart">
-                <!-- <li><img src="./image/main/0.png" alt="rosegold"></li> -->
-                <!-- <li><img src="./image/main/1.png" alt="inside"></li> -->
-                <!-- <li><img src="./image/main/2.png" alt="baby_pink"></li> -->
                 <li></li>
                 <li></li>
                 <li></li>
             </ul>
+            
+            <!-- main의 가운데 -->
             <div id="mainImg" class="mainImg cart">
-                <!-- <img src="./image/main/color/0.png" alt=""> -->
+                <img src="./image/main/color/Rosegold.png" alt="">
             </div>
+            
+            <!-- main의 오른쪽 -->
             <div id="selectBox" class="selectBox cart">
                 <h1>씨게이트 Backup Plus GOLD +Rescue Portable Drive USB3.0</h1>
                 <table>
@@ -35,25 +37,35 @@
                     <tr>
                         <th>color</th>
                         <td id="cBox" class="cBox">
-                            <form action="#" method="get" id="input_box" class="input_box">
-                                <span id="color0" class="check"><input type="checkbox" name="color" id="0" value="rosegold">rosegold</span>
-                                <span id="color1" class="check"><input type="checkbox" name="color" id="1" value="mint">mint</span>
-                                <span id="color2" class="check"><input type="checkbox" name="color" id="2" value="purple">purple</span>
-                                <span id="color3" class="check"><input type="checkbox" name="color" id="3" value="red">red</span>
-                                <span id="color4" class="check"><input type="checkbox" name="color" id="4" value="skyblue">skyblue</span>
-                                
-                            </form>
+                            <select name="choice" id="choice">
+                                <option value="select">선택</option>
+                                <option value="Rosegold">Rosegold</option>
+                                <option value="Mint">Mint</option>
+                                <option value="Purple">Purple</option>
+                                <option value="Red">Red</option>
+                                <option value="Skyblue">Skyblue</option>
+                            </select>
+                        
+                        
+                            
                         </td>
                     </tr>
                     <tr>
-                        <th></th>
-                        <td></td>
+                        <th>수량</th>
+                        <td><input type="number" id="number" min="1" max="10" placeholder="0">
+                        </td>
                     </tr>
-                    <tr>
-                        <th></th>
-                        <td></td>
-                    </tr>
+                               
                 </table>
+                
+                <button id="order" class="order">장바구니 추가</button>
+                
+                <div id="result" class="result">
+                    <h1>카트 목록</h1>
+                    <div class="insert" id="insert"></div>
+                    <button class="exit" id="exit">닫기</button>
+                </div>
+                
                 <!-- 씨게이트 Backup Plus GOLD +Rescue Portable Drive USB3.0
                 품목 : 외장하드|HDD종류 : 6.3cm|HDD방식 : SATA3|외장하드단자 : USB3.0(USB3.2 Gen1)
                 |색상 : 골드|두께 : 12mm|무게 : 140~247g|구성품 : 클라우드제공| -->
