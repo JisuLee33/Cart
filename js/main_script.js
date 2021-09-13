@@ -18,12 +18,18 @@ $(function(){
     });
 
     //옵션 + 수량 선택 후 카트에 담기 
+    
     $("#order").click(function(){
     const op = $("#choice option:selected");
     const number = $("#number");
-    const insert = document.getElementById("insert")
+    const insert = document.getElementById("insert");
+    const arr = [];
+    
     let result ="옵션 : "+ op.val() + " 수량 : " + number.val()+"개";
-    const print = (op.val()!="" && number.val()!="") ? ($("#result").show() , insert.innerHTML=result) : alert("옵션과 갯수를 확인해 주세요");
+    const print = (op.val()!="" && number.val()!="") 
+                  ? ($("#result").show() , arr.push(insert.innerHTML += result + "<br>")) 
+                  : alert("옵션과 갯수를 확인해 주세요");
+    console.log(arr);
     return print;
     });
 
