@@ -14,8 +14,12 @@ $(function(){
     $("#choice").change(function(){
         let OpVal = $('option:selected', this).text();
         let img_src = "./image/main/color/"+OpVal+".png";
-    $("#mainImg img").attr("src", img_src);    
+        $("#mainImg img").attr("src", img_src);
     });
+    
+    const price = document.getElementById("price");
+    let inputPrice = 99000;
+    price.innerHTML = inputPrice;
 
     //옵션 + 수량 선택 후 카트에 담기 
     
@@ -24,10 +28,13 @@ $(function(){
     const number = $("#number");
     const insert = document.getElementById("insert");
     const arr = [];
-    
-    let result ="옵션 : "+ op.val() + " 수량 : " + number.val()+"개";
+
+    let opResult ="옵션 : "+ op.val() + " 수량 : " + number.val()+"개";
+    let prResult ="가격 : "+ (number.val()*inputPrice.val());
+
+    // let price = "가격 : "+ 
     const print = (op.val()!="" && number.val()!="") 
-                  ? ($("#result").show() , arr.push(insert.innerHTML += result + "<br>")) 
+                  ? ($("#result").show() , arr.push(insert.innerHTML += opResult + "<br>" + prResult)) 
                   : alert("옵션과 갯수를 확인해 주세요");
     console.log(arr);
     return print;
